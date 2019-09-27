@@ -1,0 +1,109 @@
+@import "./scss/variable";
+@import "./scss/reactSelect";
+@import "./scss/main";
+
+.App {
+  text-align: center;
+}
+table tbody > tr.empty-row td{
+  border: 0;
+}
+
+.client-header {
+  & > td {
+    background-color: #f4f4f4;
+  }
+  & > td:first-child {
+    background-color: #B3D6EB;
+  }
+}
+span.Select-clear{
+  position:absolute;
+  top:5px;
+  margin-top: 3px;
+
+  margin-right: 5px;
+  right:1px;
+}
+.Select-arrow{
+  position:absolute;
+  top:5px;
+  margin-top: 10px;
+
+  margin-right: 5px;
+  right:1px;
+}
+
+.users_wrap .group1 td:nth-child(2) a{
+  color: #c62828;
+}
+.users_wrap .group2 td:nth-child(2) a{
+  color: #388e3c;
+}
+.users_wrap .group3 td:nth-child(2) a{
+  color: #388e3c;
+}
+.month-picker input{
+  margin-bottom: -3px;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.table tbody > tr.empty-row:hover{
+  background: white;
+}
+select{
+
+  height: 27px;
+  border: solid 1px rgb(235, 226, 226);
+}
+.slo-table{
+  overflow: scroll;
+}
+.color_a_exit{
+  color: #ffe600;
+}
+.bg_black_exit_a{
+
+  background: black;
+}
+.bg_black_exit_a:hover{
+  cursor: pointer;
+}
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+.login-box-body{
+  background-color: #dcdcdc;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+input.counter-input{
+  max-width: 140px;
+  margin: 0 0 0 40px;
+}
+.param_resul_list{
+  margin:  23px 0 0;
+}
+.param_resul_list .popover_wrap{
+  bottom: -67px;
+  left: 0;
+  z-index: 900;
+}
+.param_resul_list .btn-save{
+  margin: 0 0 0 10px;
+}
+table.sga-table tr th:first-child{
+  height: 100%;
+}
