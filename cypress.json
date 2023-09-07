@@ -1,7 +1,8 @@
 {
     "env": {
         "default": {
-            
+            "foo": "bar",
+            "baz": "quux"
         }
     }
 }

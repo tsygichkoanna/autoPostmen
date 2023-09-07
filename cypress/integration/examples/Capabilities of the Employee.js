@@ -31,9 +31,9 @@ describe('Capabilities of the Employee', function () {
             .click()
 
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
             .get('[name = "secondPassword"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('#save')
             .click()

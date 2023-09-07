@@ -1,17 +1,18 @@
 describe('Authorization', function () {
 
     beforeEach(() => {
-        cy.visit('http://localhost:3000/login')
+        cy.visit('http://test/login')
     })
 
 
     // Authorization Admin
     it.only('Login valid ADMIN', function () {
         cy.get('[name = "email"]')
-            .type('admin@atilog.com')
+            .type('admin@test.com')
 
         cy.get('[name = "password"]')
-            .type('b59c67bf196a')
+            .type(Cypress.env('foo'))
+            // .type(foo)
 
         cy.get('button')
             .click()
@@ -22,10 +23,10 @@ describe('Authorization', function () {
 
     it('Login missing "@" ADMIN', function () {
         cy.get('[name = "email"]')
-            .type('adminatilog.com')
+            .type('mailtest.com')
 
         cy.get('[name = "password"]')
-            .type('b59c67bf196a')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -39,7 +40,7 @@ describe('Authorization', function () {
             .type('#@%^%#$@#$@#.com')
 
         cy.get('[name = "password"]')
-            .type('b59c67bf196a')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -50,10 +51,10 @@ describe('Authorization', function () {
 
     it('Login Multiple dots ADMIN', function () {
         cy.get('[name = "email"]')
-            .type('email..admin@atilog.com')
+            .type('email..admin@test.com')
 
         cy.get('[name = "password"]')
-            .type('b59c67bf196a')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -64,10 +65,10 @@ describe('Authorization', function () {
 
     it('Login dot before domain ADMIN', function () {
         cy.get('[name = "email"]')
-            .type('admin@.atilog.com')
+            .type('admin@.test.com')
 
         cy.get('[name = "password"]')
-            .type('b59c67bf196a')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -78,7 +79,7 @@ describe('Authorization', function () {
 
     it('Without login ADMIN', function () {
         cy.get('[name = "password"]')
-            .type('b59c67bf196a')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -89,7 +90,7 @@ describe('Authorization', function () {
 
     it('Without password ADMIN', function () {
         cy.get('[name = "email"]')
-            .type('admin@atilog.com')
+            .type('admin@test.com')
 
         cy.get('button')
             .click()
@@ -100,10 +101,10 @@ describe('Authorization', function () {
 
     it('With false password ADMIN', function () {
         cy.get('[name = "email"]')
-            .type('admin@atilog.com')
+            .type('admin@test.com')
 
         cy.get('[name = "password"]')
-            .type('b59x67bf196a')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -116,10 +117,10 @@ describe('Authorization', function () {
     // Authorization Head Dept
     it('Login valid HEAD DEPT', function () {
         cy.get('[name = "email"]')
-            .type('th@p33.org')
+            .type('test@mail.com')
 
         cy.get('[name = "password"]')
-            .type('1111')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -130,10 +131,10 @@ describe('Authorization', function () {
 
     it('Login missing "@" HEAD DEPT', function () {
         cy.get('[name = "email"]')
-            .type('thp33.org')
+            .type('test@mail.com')
 
         cy.get('[name = "password"]')
-            .type('1111')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -147,7 +148,7 @@ describe('Authorization', function () {
             .type('#@%^%#$@#$@#.com')
 
         cy.get('[name = "password"]')
-            .type('1111')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -158,10 +159,10 @@ describe('Authorization', function () {
 
     it('Login Multiple dots HEAD DEPT', function () {
         cy.get('[name = "email"]')
-            .type('email..th@p33.org')
+            .type('email..test@r22.org')
 
         cy.get('[name = "password"]')
-            .type('1111')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -172,10 +173,10 @@ describe('Authorization', function () {
 
     it('Login dot after domain HEAD DEPT', function () {
         cy.get('[name = "email"]')
-            .type('th@.p33.org')
+            .type('email@.test.org')
 
         cy.get('[name = "password"]')
-            .type('1111')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -186,7 +187,7 @@ describe('Authorization', function () {
 
     it('Without login HEAD DEPT', function () {
         cy.get('[name = "password"]')
-            .type('1111')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -197,7 +198,7 @@ describe('Authorization', function () {
 
     it('Without password HEAD DEPT', function () {
         cy.get('[name = "email"]')
-            .type('th@p33.org')
+            .type('email@t23.com')
 
         cy.get('button')
             .click()
@@ -208,10 +209,10 @@ describe('Authorization', function () {
 
     it('With false password HEAD DEPT', function () {
         cy.get('[name = "email"]')
-            .type('th@p33.org')
+            .type('email@t23.com')
 
         cy.get('[name = "password"]')
-            .type('1121')
+            .type('3434')
 
         cy.get('button')
             .click()
@@ -224,10 +225,10 @@ describe('Authorization', function () {
     //   Authorization Employee
     it('Login valid EMPLOYEE', function () {
         cy.get('[name = "email"]')
-            .type('autotest@mailforspam.com')
+            .type('emaitest@mailforspam.com')
 
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -241,7 +242,7 @@ describe('Authorization', function () {
             .type('autotestmailforspam.com')
 
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -255,7 +256,7 @@ describe('Authorization', function () {
             .type('#@%^%#$@#$@#.com')
 
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -266,10 +267,10 @@ describe('Authorization', function () {
 
     it('Login Multiple dots EMPLOYEE', function () {
         cy.get('[name = "email"]')
-            .type('email..autotest@mailforspam.com')
+            .type('email..test@mailforspam.com')
 
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -280,10 +281,10 @@ describe('Authorization', function () {
 
     it('Login dot before domain EMPLOYEE', function () {
         cy.get('[name = "email"]')
-            .type('autotest@.mailforspam.com')
+            .type('emailtest@.mailforspam.com')
 
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -294,7 +295,7 @@ describe('Authorization', function () {
 
     it('Without login EMPLOYEE', function () {
         cy.get('[name = "password"]')
-            .type('12345678')
+            .type('test')
 
         cy.get('button')
             .click()
@@ -305,7 +306,7 @@ describe('Authorization', function () {
 
     it('Without password EMPLOYEE', function () {
         cy.get('[name = "email"]')
-            .type('autotest@mailforspam.com')
+            .type('emailtest@mailforspam.com')
 
         cy.get('button')
             .click()
@@ -316,10 +317,10 @@ describe('Authorization', function () {
 
     it('With false password EMPLOYEE', function () {
         cy.get('[name = "email"]')
-            .type('autotest@mailforspam.com')
+            .type('emailtest@mailforspam.com')
 
         cy.get('[name = "password"]')
-            .type('HfQEMjGhWmP4mM3o')
+            .type('hWmP4mM3o')
 
         cy.get('button')
             .click()

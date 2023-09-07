@@ -35,12 +35,12 @@ Cypress.Commands.add('deleteUser', (newUserLastName) => {
 // Авторизация в роли Админа
 Cypress.Commands.add('authorizationAdmin', (autoAdmin) => {
     cy.viewport(1440, 900)
-    cy.visit('http://localhost:3000/login')
+    cy.visit('http://test/login')
     cy.get('[name = "email"]')
-        .type('admin@atilog.com')
+        .type('admin@test.com')
 
     cy.get('[name = "password"]')
-        .type('b59c67bf196a')
+        .type('test')
 
     cy.get('button')
         .click()
@@ -49,7 +49,7 @@ Cypress.Commands.add('authorizationAdmin', (autoAdmin) => {
 // Авторизация в роли Сотрудника
 Cypress.Commands.add('authorizationEmployee', (autoEmployee) => {
     cy.viewport(1440, 900)
-    cy.visit('http://localhost:3000/login')
+    cy.visit('http://test/login')
     cy.get('[name = "email"]')
         .type('autotest@mailforspam.com')
 
@@ -63,12 +63,12 @@ Cypress.Commands.add('authorizationEmployee', (autoEmployee) => {
 // Авторизация в роли Главы отдела
 Cypress.Commands.add('authorizationHead', (autoHead) => {
     cy.viewport(1440, 900)
-    cy.visit('http://localhost:3000/login')
+    cy.visit('http://test/login')
     cy.get('[name = "email"]')
-        .type('th@p33.org')
+        .type('mail@test.com')
 
     cy.get('[name = "password"]')
-        .type('1111')
+        .type('test')
 
     cy.get('button')
         .click()
